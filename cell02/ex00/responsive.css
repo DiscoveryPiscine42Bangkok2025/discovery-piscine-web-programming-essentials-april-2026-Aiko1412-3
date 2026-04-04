@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #777;
+    vertical-align: middle;
+}
+
+.box1 {
+    background-color: #bcc481;
+    width: 50%;
+}
+
+.box2 {
+    background-color: #f7bdad;
+    width: 50%;
+}

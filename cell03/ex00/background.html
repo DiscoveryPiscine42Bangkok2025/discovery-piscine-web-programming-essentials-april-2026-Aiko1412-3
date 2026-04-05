@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+
+    <!-- The button that triggers the color change -->
+    <button id="btn" onclick="changeBackgroundColor()">Click me!</button>
+
+    <!-- Basic JavaScript to handle the logic -->
+    <script>
+        function changeBackgroundColor() {
+            // Generating random values for Red, Green, and Blue (0-255)
+            var r = Math.floor(Math.random() * 100);
+            var g = Math.floor(Math.random() * 100);
+            var b = Math.floor(Math.random() * 100);
+            
+            // Constructing the RGB color string
+            const randomColor = "rgb(" + r + "," + g + "," + b + ")";
+            
+            // Applying the color to the body's background
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>

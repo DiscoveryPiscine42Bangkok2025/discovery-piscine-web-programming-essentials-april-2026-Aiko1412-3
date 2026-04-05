@@ -1,0 +1,57 @@
+/* Reset margins and heights */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    color: #777;
+}
+
+/* Common Parallax Styling */
+.parallax-section {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Fills full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Images - Use any URLs you like */
+.bg1 {
+    background-image: url('https://i.pinimg.com/736x/f5/b4/e8/f5b4e871d08c3e4f1404d8fa465469ca.jpg');
+}
+
+.bg2 {
+    background-image: url('https://i.pinimg.com/1200x/11/4a/b9/114ab9e098a2b7898a3bc1fd1157e7c6.jpg');
+}
+
+/* Center Message Styling */
+.caption {
+    text-align: center;
+    color: #000;
+}
+
+.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* The Black Block Section */
+.dark-section {
+    color: #ddd;
+    background-color: #282e34;
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.dark-section h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}

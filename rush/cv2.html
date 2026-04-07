@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume 02 | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        :root {
+            --bg-main: #d2d2d200;
+            --bg-section: #afafaf;
+            --text-primary: #f0f0f0;
+            --text-secondary: #b8b8b8;
+            --accent: #d0d0d0;
+            --border: #da94b3;
+        }
+        * { scroll-behavior: smooth; margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* ✅ GIF Background (Replace with your GIF URL) */
+        body {
+            background-image: url('https://i.pinimg.com/originals/8c/a1/02/8ca102a811768049d3c329f9d471130a.gif');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            padding-top: 80px;
+            background-color: rgba(255, 255, 255, 0);
+            background-blend-mode: darken;
+        }
+
+        /* Fixed Navbar (Original: Profile/Experience & Skills/Contact/Home) */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 999;
+            background-color: rgba(199, 154, 169, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-primary) !important;
+            letter-spacing: 0.1rem;
+        }
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
+
+        /* Sections (Original) */
+        section { padding: 100px 0; min-height: 100vh; border-bottom: 1px solid var(--border); }
+        #profile { background-color: rgba(0, 0, 0, 0.65); }
+        #experience { background-color: rgba(8, 8, 8, 0.65); }
+        #contact { background-color: rgba(0, 0, 0, 0.65); }
+
+        /* Profile (Original Styles) */
+        .profile-img {
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(208,208,208,0.15);
+            margin: 0 auto 2rem;
+            display: block;
+        }
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .profile-title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .profile-bio {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* ✅ Exact Image Layout: 2 Columns × 2 Rows (No Grid Mix-Up) */
+        .image-container {
+            width: 100%;
+            margin-top: 3rem; /* Spacing from bio text */
+        }
+        /* Left Column: Image1 (Top) + Image3 (Bottom Under Image1) */
+        .left-column {
+            float: left;
+            width: 50%;
+            padding-right: 0.75rem; /* Half gap (matches right column padding) */
+        }
+        /* Right Column: Image2 (Top) + Image4 (Bottom Under Image2) */
+        .right-column {
+            float: left;
+            width: 50%;
+            padding-left: 0.75rem; /* Half gap (total gap = 1.5rem) */
+        }
+        /* All images: uniform size + style */
+        .exact-position-img {
+            width: 100%;
+            height: 250px; /* Same height for all 4 images */
+            object-fit: cover; /* No distortion */
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 1.5rem; /* Gap between Image1-Image3 / Image2-Image4 */
+            transition: transform 0.3s ease;
+        }
+        .exact-position-img:hover {
+            transform: scale(1.02); /* Hover zoom effect */
+        }
+        /* Clear float for responsive stacking */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        /* Mobile Responsive: Stack all images vertically (1 per row) */
+        @media (max-width: 767px) {
+            .left-column, .right-column {
+                width: 100%;
+                padding: 0;
+            }
+            .exact-position-img {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Experience & Skills (Original Styles) */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: 0.1rem;
+        }
+        .card-custom {
+            background-color: rgba(15,15,15,0.7);
+            border: 1px solid var(--border);
+            padding: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .card-custom:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(208,208,208,0.1); }
+        .card-title { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--accent); }
+        .skill-tag {
+            display: inline-block;
+            background-color: #151515;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            margin: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact (Original Styles) */
+        .contact-link {
+            display: inline-block;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin: 15px;
+            padding: 12px 30px;
+            border: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        .contact-link:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Original: All Links Preserved) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">RESUME 01</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience & Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section: Exact Image Positioning -->
+    <section id="profile">
+        <div class="container">
+            <img src="https://media.discordapp.net/attachments/1245937997254361210/1490997479045464084/IMG_3642.jpg?ex=69d6171c&is=69d4c59c&hm=04fbdfc0b952bed15b12a745df48bbaf9c5725d9a22fb75da18b2323dfef5cad&=&format=webp&width=1104&height=1104" alt="Profile" class="profile-img">
+            <h2 class="profile-name">Yimwan :D</h2>
+            <p class="profile-title">Student</p>
+            <p class="profile-bio">
+                um yeah maybe i know why . . .
+            </p>
+
+            <!-- ✅ EXACT IMAGE LAYOUT (NO MIX-UP!) -->
+            <div class="image-container clearfix">
+                <!-- LEFT COLUMN: Image1 (Top) → Image3 (Bottom Under Image1) -->
+                <div class="left-column">
+                    <!-- 1. Image1: Top Left -->
+                    <img src="https://media.discordapp.net/attachments/1245937997254361210/1490997479351783514/IMG_3639.jpg?ex=69d6171c&is=69d4c59c&hm=28ca0642913f6d3acdd6601f5059caf890730004b2867c2b1e3d2b1ac916ee6e&=&format=webp&width=1103&height=371" alt="Image1 Top Left" class="exact-position-img">
+                    <!-- 3. Image3: Bottom Left (Under Image1) -->
+                    <img src="https://media.discordapp.net/attachments/1245937997254361210/1490997479963885598/5C41D801-6CCE-4AE9-B351-C256010488B2.gif?ex=69d6171c&is=69d4c59c&hm=476aa1a065ce6cc76f5941ea1a8968c8b0d20374080209b93d9efb6649d6462c&=&width=810&height=344">
+                </div>
+                <!-- RIGHT COLUMN: Image2 (Top) → Image4 (Bottom Under Image2) -->
+                <div class="right-column">
+                    <!-- 2. Image2: Top Right -->
+                    <img src="https://i.pinimg.com/originals/bd/0e/08/bd0e082fe2c38d95bcebe4814fbfaa94.gif">
+                    <!-- 4. Image4: Bottom Right (Under Image2) -->
+                    <img src="https://media.discordapp.net/attachments/1245937997254361210/1490997480253558834/563_20260407150958.png?ex=69d6171c&is=69d4c59c&hm=c4bece40de2cde23c225584a19646d78fa4f5a49af78396373d124995eb56fc8&=&format=webp&quality=lossless&width=1104&height=624" alt="Image4 Bottom Right" class="exact-position-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Skills (100% Original) -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Skills</h2>
+            <div class="row">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="card-custom">
+                        <h3 class="card-title">Experience</h3>
+                        <p class="fw-bold">Science camp</p>
+                        <p class="text-secondary">funest camp ever .</p>
+                    </div>
+                    <div class="card-custom">
+                        <h3 class="card-title">Relationship building activities | Tech Inc. (2017 - 2020)</h3>
+                        <p class="text-secondary">Just dancing on stage 0_0</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card-custom">
+                        <h3 class="card-title">Technical Skills</h3>
+                        <span class="skill-tag">Digital Drawing</span>
+                        <span class="skill-tag">Pattern Recognition</span>
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">Canva for Graphic Desing</span>
+                        <span class="skill-tag">Team Coordination</span>
+                        <span class="skill-tag">Analytical Thinking</span>
+                    </div>
+                    <div class="card-custom">
+                        <h3 class="card-title">Soft Skills</h3>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Responsibility</span>
+                        <span class="skill-tag">Emotional Awareness </span>
+                        <span class="skill-tag">Attention to detail </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact (100% Original) -->
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <a href="https://github.com/punny0bunny-afk" class="contact-link">GITHUB</a>
+            <a href="https://www.instagram.com/hah0zy?igsh=N205YmJvbnlhcDJy&utm_source=qr" class="contact-link">INSTAGRAM</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

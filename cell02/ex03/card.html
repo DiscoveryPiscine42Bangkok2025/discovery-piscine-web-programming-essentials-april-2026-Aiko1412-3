@@ -2,35 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile Card</title>
     <link rel="stylesheet" href="card.css">
+    <title>User Profile Card</title>
 </head>
 <body>
-    <div class="card">
-        <h1>My Profile Card</h1>
-        <table>
+
+    <!-- Invisible table used for alignment as per instructions -->
+    <table class="profile-card">
+        <thead>
             <tr>
-                <td rowspan="3" class="profile-pic-cell">
-                    <img src="https://i.pinimg.com/736x/fa/29/57/fa29578fe102b7a1e3c8e270776ee92f.jpg" alt="Profile Picture" class="profile-pic">
-                </td>
-                <td class="info-cell">
-                    <div class="login">Aiko</div>
-                    <div class="description">...</div>
-                </td>
+                <th><h1>User Profile Card</h1></th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
-                <td class="social-cell">
-                    <a href="#"><img src="https://i.pinimg.com/1200x/99/7b/0a/997b0a243df40b681d8c8177724f1b45.jpg" alt="Notion" class="social-icon"></a>
-                    <a href="#"><img src="https://i.pinimg.com/1200x/01/e6/21/01e621158668a4b8b7c92f1d1671bd43.jpg" alt="VS CODE" class="social-icon"></a>
-                    <a href="#"><img src="https://i.pinimg.com/736x/8f/ba/57/8fba573c52d59dbe768c835cee527ebd.jpg" alt="Social 3" class="social-icon"></a>
+                <td>
+                    <!-- Profile Picture -->
+                    <img src="https://i.pinimg.com/736x/dc/a0/c0/dca0c026b56aeafabf6862f910cfbf89.jpg" alt="Profile " class="profile-img">
                 </td>
             </tr>
             <tr>
-                <td></td>
+                <td class="info-section">
+                    <!-- Login/Name -->
+                    <h2>Aiko</h2>
+                    
+                    <!-- 2-3 words description -->
+                    <p class="description">Level 0, nothing</p>
+                    <p class="sub-description">Bkk</p>
+                    
+                    <!-- Social Network Images -->
+                    <div class="social-links">
+                        <img src="https://i.pinimg.com/736x/99/7b/0a/997b0a243df40b681d8c8177724f1b45.jpg" alt="Notion">
+                        <img src="https://i.pinimg.com/736x/e0/ea/91/e0ea91627970e66f2e1702263110ef15.jpg" alt="Ig">
+                        <img src="https://i.pinimg.com/736x/14/23/70/142370ab227a6180cd9aac5b2bf46647.jpg" alt="github">
+                    </div>
+                </td>
             </tr>
-        </table>
-        <button class="contact-btn">Contact</button>
-    </div>
+            <tr>
+                <td>
+                    <!-- Clickable Button -->
+                    <button class="contact-btn">Contact</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>

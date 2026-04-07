@@ -1,0 +1,13 @@
+body {
+    font-family: sans-serif;
+}
+#ft_list div {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+#ft_list div:hover {
+    background-color: #e0e0e0;
+}
